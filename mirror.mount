@@ -1,0 +1,4 @@
+[Mount]
+What=/dev/vdb
+Where=/mirror
+Type=ext4
