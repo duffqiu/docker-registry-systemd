@@ -15,6 +15,6 @@ ExecStart=/usr/bin/docker run --name registry -v /mirror/registry:/tmp/ -p 5000:
                           --dns 146.11.115.200 \
                           registry
 ExecStop=-/usr/bin/docker stop registry
-estart=always
+Restart=always
 RestartSec=10s
 
