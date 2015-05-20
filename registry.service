@@ -12,10 +12,11 @@ ExecStart=/usr/bin/docker run --name registry -v /mirror/registry:/tmp/ -p 5000:
                           -e "MIRROR_SOURCE=https://registry-1.docker.io" \
                           -e "MIRROR_SOURCE_INDEX=https://index.docker.io" \
                           -e "SETTINGS_FLAVOR=local" \
-                          -e "SEARCH_BACKEND=sqlalchemy" \
                           --dns 146.11.115.200 \
                           registry
 ExecStop=-/usr/bin/docker stop registry
 Restart=always
 RestartSec=10s
 
+[Install]
+WantedBy=multi-user.target
